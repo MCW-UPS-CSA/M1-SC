@@ -1,0 +1,4 @@
+for f in *.wav; do
+    # quote "$f" or spaces may misbehave
+sox "$f" -r 16000 -c 1 -b 16 ./converted/"$f"
+done

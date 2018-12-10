@@ -1,0 +1,4 @@
+for f in ./*.wav; do
+    # quote "$f" or spaces may misbehave
+sox "$f" temp.dat && ( grep -v ";" temp.dat | awk '{ print $2 }' > "$f.csv") && rm temp.dat
+done
